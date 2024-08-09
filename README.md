@@ -1,38 +1,79 @@
-# create-svelte
+# VoteMeUp
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+**VoteMeUp** är en webbaserad applikation byggd med SvelteKit och Supabase. Den låter användare skapa projekt, nominera namnförslag och rösta på de bästa förslagen. Applikationen är flexibel och enkel att använda, med stöd för både autentisering och cookie-baserad röstning.
 
-## Creating a project
+## Funktioner
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Skapa Projekt:** Användare kan skapa sina egna projekt, beskriva dem och bjuda in andra att nominera och rösta på namn.
+- **Nominera och Rösta:** Andra användare kan nominera namn och rösta på de mest populära förslagen.
+- **Användarautentisering:** Användare kan logga in med Supabase Auth för att skapa projekt och spåra sina nomineringar.
+- **Cookie-baserad Röstning:** Röststatus sparas i cookies för att tillåta enkel och smidig röstning utan krav på inloggning.
+
+## Installation och Setup
+
+### 1. Förutsättningar
+
+- Node.js och npm installerat på din maskin.
+- Ett konto på Supabase.
+
+### 2. Klona Repositoriet
+
+Klona detta repo till din lokala maskin och navigera till projektmappen:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/your-username/votemeup.git
+cd votemeup
 ```
 
-## Developing
+### 3. Installera beroenden
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Installera nödvändiga npm-paket:
+
+```bash
+npm install
+```
+
+### 4. Konfigurera Supabase
+
+1. Skapa ett nytt projekt på Supabase.
+2. Skapa nödvändiga tabeller i Supabase med hjälp av SQL-schemat som finns i dokumentationen.
+3. Skapa en .env-fil i projektroten och lägg till dina Supabase-uppgifter:
+
+```js
+SUPABASE_URL=din_supabase_url  
+SUPABASE_ANON_KEY=din_supabase_anon_key
+```
+
+### 5. Kör Applikationen Lokalt
+
+Starta utvecklingsservern med:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Applikationen kommer nu att vara tillgänglig på http://localhost:3000.
 
-To create a production version of your app:
+## Användning
 
-```bash
-npm run build
-```
+- **Skapa Projekt:** Gå till /create-project för att skapa ett nytt projekt.
+- **Visa och Välj Projekt:** Se en lista över tillgängliga projekt på startsidan, välj ett projekt för att nominera och rösta på namn.
+- **Nominera och Rösta:** När du är inne i ett projekt kan du nominera nya namnförslag och rösta på befintliga förslag.
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Du kan enkelt deploya VoteMeUp till plattformar som Vercel eller Netlify. Följ deras instruktioner för att deploya en SvelteKit-applikation.
+
+## Bidra
+
+Bidrag till VoteMeUp är välkomna! Om du vill bidra, följ dessa steg:
+
+1. Forka detta repo.
+2. Skapa en ny branch (git checkout -b feature/my-feature).
+3. Gör dina ändringar och committa (git commit -am 'Add my feature').
+4. Pusha till branchen (git push origin feature/my-feature).
+5. Skicka in en pull request.
+
+## Licens
+
+VoteMeUp är licensierat under MIT-licensen. Se LICENSE för mer information.
