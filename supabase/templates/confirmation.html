@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekräfta din e-postadress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 5rem auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: rgb(236, 72, 153);
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: rgb(226, 62, 143);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bekräfta din registrering</h2>
+        <p>Följ denna länk för att bekräfta ditt användarkonto:</p>
+        <p><a href="{{ .ConfirmationURL }}" class="btn">Bekräfta din e-postadress</a></p>
+    </div>
+</body>
+</html>
