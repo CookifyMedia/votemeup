@@ -1,6 +1,9 @@
 <script>
+	import { applyAction } from '$app/forms';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+
+	import '../app.css';
 
 	export let data;
 	$: ({ session, supabase } = data);
