@@ -21,7 +21,7 @@
 Klona detta repo till din lokala maskin och navigera till projektmappen:
 
 ```bash
-git clone https://github.com/your-username/votemeup.git
+git clone https://github.com/CookifyMedia/votemeup.git
 cd votemeup
 ```
 
@@ -33,7 +33,24 @@ Installera nödvändiga npm-paket:
 npm install
 ```
 
-### 4. Konfigurera Supabase
+### 4A. Konfigurera Lokalt Supabase
+
+1. Starta Docker
+2. Starta Supabase:
+
+```bash
+supabase start 
+```
+
+3. Skapa nödvändiga tabeller i Supabase med hjälp av SQL-schemat som finns i dokumentationen.
+4. Ändra .env.example till .env i projektroten och lägg till dina Supabase-uppgifter:
+
+```js
+SUPABASE_URL=din_supabase_url  
+SUPABASE_ANON_KEY=din_supabase_anon_key
+```
+
+### 4B. Konfigurera Cloud Supabase
 
 1. Skapa ett nytt projekt på Supabase.
 2. Skapa nödvändiga tabeller i Supabase med hjälp av SQL-schemat som finns i dokumentationen.
@@ -52,11 +69,11 @@ Starta utvecklingsservern med:
 npm run dev
 ```
 
-Applikationen kommer nu att vara tillgänglig på http://localhost:3000.
+Applikationen kommer nu att vara tillgänglig på http://localhost:5173.
 
 ## Användning
 
-- **Skapa Projekt:** Gå till /create-project för att skapa ett nytt projekt.
+- **Skapa Projekt:** Gå till /my/projects/new för att skapa ett nytt projekt.
 - **Visa och Välj Projekt:** Se en lista över tillgängliga projekt på startsidan, välj ett projekt för att nominera och rösta på namn.
 - **Nominera och Rösta:** När du är inne i ett projekt kan du nominera nya namnförslag och rösta på befintliga förslag.
 
